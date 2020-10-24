@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html >
+<head>
+    <title>Registration For Govt.Exams Training</title>
+    <script>
+        function checkdata() {
+            var names=["Vijay","Kumar"];
+			var flag;
+			flag = 1;
+            if(flag == 1){
+            if(document.getElementById("name").value.length<5 || document.getElementById("name").value.length>10) {
+                flag++;
+                alert("Length is invalid");
+            }
+			else if(document.getElementById("PhoneNo").value.length!=10) {
+                flag++;
+                alert("Phone number Should have 10 Digits");
+            }
+            else( flag == 1)
+            {
+				for(let i =0; i<names.length; i++)
+				{ 
+					if(document.getElementById("name").value == names[i]){
+                        flag++;
+						alert("user name already exists,enter other name");
+					}
+				}
+            }
+		}
+            if(flag == 1)
+            {	
+                document.getElementById("Display").innerHTML="successfully registered";
+				alert(" Registered");
+            }
+        }
+
+    </script>
+</head>
+<body>
+    <form id="Register">
+        Name <input type="text" id="name"> <br>
+        Contact <input type="text" id="PhoneNo"> <br>
+        <p>
+            Registered Date
+        <input type="date" placeholder="Enter the Check-in date" id="check-in"/>
+        </p>
+        <p>
+            Travel facility Required
+            <input type="radio" name="travel">Required
+            <input type="radio" name="travel">Not Required
+        </p>
+        <p>
+            <p>
+                select the qualification
+                <select  id="qualification">
+                    <option >graduation</option>
+                    <option >under-graduation</option>
+                    <option >post-graduation</option>
+                    <option >pre-university</option>
+                    <option >schooling</option>
+                    
+                </select>
+            </p>
+        </p>
+        Submit:<input type="submit" onclick="checkdata()">
+   
+    <p id="display">
+
+    </p>
+</form>
+</body>
+</html>
